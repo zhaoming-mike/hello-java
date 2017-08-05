@@ -10,6 +10,11 @@ import java.util.Map.Entry;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
+/**
+ * 请求控制器
+ * @author zhaoming
+ *
+ */
 @SuppressWarnings("restriction")
 public class HelloHttpHandler implements HttpHandler {
 
