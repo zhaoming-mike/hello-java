@@ -1,25 +1,51 @@
 package io.mike.http;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 
-import com.sun.net.httpserver.*;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
 
 @SuppressWarnings("restriction")
 public class HelloHttpHandler implements HttpHandler {
 
 	@Override
 	public void handle(HttpExchange httpExchange) throws IOException {
-		InputStream is = httpExchange.getRequestBody();
-        byte[] temp = new byte[is.available()];
-        is.read(temp);
-        String inputString = new String(temp);
-        String response = "<h3>Hello World! " + inputString + "</h3>";
-        httpExchange.sendResponseHeaders(200, response.length());
-        OutputStream os = httpExchange.getResponseBody();
-        os.write(response.getBytes());
-        os.close();
+		Map<String, String> params = queryToMap(httpExchange.getRequestURI().getQuery());
+		StringBuilder sb = new StringBuilder();
+		sb.append("<h3>Hello World!</h3>");
+		printAllQueryString(sb, params);
+		httpExchange.sendResponseHeaders(200, sb.toString().length());
+		OutputStream os = httpExchange.getResponseBody();
+		os.write(sb.toString().getBytes());
+		os.close();
 	}
 
+	private void printAllQueryString(StringBuilder sb, Map<String, String> params) {
+		if(null == params) return;
+		Iterator<Entry<String, String>> iterator = params.entrySet().iterator();
+		while(iterator.hasNext()) {
+			Entry<String, String> next = iterator.next();
+			sb.append("key:" + next.getKey());
+			sb.append("value:" + next.getValue());
+			sb.append("\r\n");
+		}
+	}
 
+	public Map<String, String> queryToMap(String query) {
+		Map<String, String> result = new HashMap<>();
+		for (String param : query.split("&")) {
+			String pair[] = param.split("=");
+			if (pair.length > 1) {
+				result.put(pair[0], pair[1]);
+			} else {
+				result.put(pair[0], "");
+			}
+		}
+		return result;
+	}
 }
