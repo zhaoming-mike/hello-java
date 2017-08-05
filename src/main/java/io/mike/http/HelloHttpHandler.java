@@ -22,7 +22,7 @@ public class HelloHttpHandler implements HttpHandler {
 	public void handle(HttpExchange httpExchange) throws IOException {
 		Map<String, String> params = queryToMap(httpExchange.getRequestURI().getQuery());
 		StringBuilder sb = new StringBuilder();
-		sb.append("<h3>Hello World!</h3>");
+		sb.append("<h3>Hello World!</h3>\r\n");
 		printAllQueryString(sb, params);
 		httpExchange.sendResponseHeaders(200, sb.toString().length());
 		OutputStream os = httpExchange.getResponseBody();
@@ -36,7 +36,7 @@ public class HelloHttpHandler implements HttpHandler {
 		while(iterator.hasNext()) {
 			Entry<String, String> next = iterator.next();
 			sb.append("key:" + next.getKey());
-			sb.append("value:" + next.getValue());
+			sb.append("\tvalue:" + next.getValue());
 			sb.append("\r\n");
 		}
 	}
