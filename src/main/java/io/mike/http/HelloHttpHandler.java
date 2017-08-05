@@ -12,6 +12,8 @@ import com.sun.net.httpserver.HttpHandler;
 
 /**
  * 请求控制器
+ * e.g.
+ * 		http://127.0.0.1:8888/hello?github=https://www.github.com&localhost=http://localhost:8888/hello?a=1
  * @author zhaoming
  *
  */
@@ -22,12 +24,21 @@ public class HelloHttpHandler implements HttpHandler {
 	public void handle(HttpExchange httpExchange) throws IOException {
 		Map<String, String> params = queryToMap(httpExchange.getRequestURI().getQuery());
 		StringBuilder sb = new StringBuilder();
-		sb.append("<h3>Hello World!</h3>\r\n");
-		printAllQueryString(sb, params);
+		printHtml(params, sb);
 		httpExchange.sendResponseHeaders(200, sb.toString().length());
 		OutputStream os = httpExchange.getResponseBody();
 		os.write(sb.toString().getBytes());
 		os.close();
+	}
+
+	private void printHtml(Map<String, String> params, StringBuilder sb) {
+		sb.append("<html>");
+		sb.append("<title>Hello World!</title>");
+		sb.append("<body>");
+		sb.append("<h3>Hello World!</h3>");
+		printAllQueryString(sb, params);
+		sb.append("</body>");
+		sb.append("</html>");
 	}
 
 	private void printAllQueryString(StringBuilder sb, Map<String, String> params) {
@@ -35,9 +46,9 @@ public class HelloHttpHandler implements HttpHandler {
 		Iterator<Entry<String, String>> iterator = params.entrySet().iterator();
 		while(iterator.hasNext()) {
 			Entry<String, String> next = iterator.next();
-			sb.append("key:" + next.getKey());
-			sb.append("\tvalue:" + next.getValue());
-			sb.append("\r\n");
+			sb.append("<a href=" + next.getValue() +">");
+			sb.append(next.getKey());
+			sb.append("</a></br>");
 		}
 	}
 
