@@ -5,3 +5,6 @@
 
 # maven dir
 target
+
+# local shell
+*.sh
