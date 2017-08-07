@@ -8,3 +8,4 @@ target
 
 # local shell
 *.sh
+*.out
