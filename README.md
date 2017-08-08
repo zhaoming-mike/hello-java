@@ -28,7 +28,7 @@
 
 ## demo
 - [x] 如果你感兴趣可以联系@zhaoming-mike
-- [ ] emoji表情：:boom::pineapple:
+- [ ] emoji表情：:boom::pineapple::desktop:
 - [ ] 测试
 
 ## code
