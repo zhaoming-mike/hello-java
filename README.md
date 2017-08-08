@@ -38,4 +38,4 @@ public int test() {
 }
 ```
 
-- 测试`<html>` inline 标签 ～hello～
+- 测试`<html>` inline 标签 ~~hello~~
