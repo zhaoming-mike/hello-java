@@ -27,5 +27,5 @@
 
 
 ## demo
-如果你感兴趣可以练习我 @zhaoming-mike
-emoji::boom:_
+- [x] 如果你感兴趣可以练习我 @zhaoming-mike
+- [] emoji表情：:boom:
