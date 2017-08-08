@@ -28,7 +28,7 @@
 
 ## demo
 - [x] 如果你感兴趣可以联系@zhaoming-mike
-- [ ] emoji表情：:boom:
+- [ ] emoji表情：:boom::pineapple:
 - [ ] 测试
 
 ## code
@@ -37,3 +37,5 @@ public int test() {
 	return 1;
 }
 ```
+
+- 测试`<html>` inline 标签 ～hello～
