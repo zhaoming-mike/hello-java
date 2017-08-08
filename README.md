@@ -28,4 +28,4 @@
 
 ## demo
 - [x] 如果你感兴趣可以练习我 @zhaoming-mike
-- [] emoji表情：:boom:
+- [ ] emoji表情：:boom:
