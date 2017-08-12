@@ -9,3 +9,6 @@ target
 # local shell
 *.sh
 *.out
+
+# any log files
+*.log
