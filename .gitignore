@@ -4,7 +4,7 @@
 .project
 
 # maven dir
-target
+target/
 
 # local shell
 *.sh
