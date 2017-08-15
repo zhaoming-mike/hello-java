@@ -5,15 +5,33 @@
 	<artifactId>hello-java</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<dependencies>
+
+		<!-- java sum rt start -->
 		<dependency>
 			<groupId>com.sun</groupId>
 			<artifactId>rt</artifactId>
 			<version>1.5.0_06</version>
 			<type>pom</type>
 		</dependency>
+		<!-- java sum rt end -->
+
+		<!-- java microbenchmark dependency start -->
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
+			<artifactId>jmh-core</artifactId>
+			<version>1.18</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
+			<artifactId>jmh-generator-annprocess</artifactId>
+			<version>1.18</version>
+		</dependency>
+		<!-- java microbenchmark dependency end -->
+
 	</dependencies>
 	<build>
 		<plugins>
+			<!-- maven exec plugins start -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
@@ -33,6 +51,7 @@
 					</arguments>
 				</configuration>
 			</plugin>
+			<!-- maven exec plugins end -->
 		</plugins>
 	</build>
 </project>
