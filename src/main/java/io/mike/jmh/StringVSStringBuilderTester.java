@@ -48,7 +48,7 @@ public class StringVSStringBuilderTester {
 				.output("./benchmark.log")
 				.forks(1)
 				.build();
-		 try {
+		try {
 			new Runner(options).run();
 		} catch (RunnerException e) {
 			e.printStackTrace();
