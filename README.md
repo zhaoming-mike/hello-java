@@ -1,6 +1,6 @@
 # hello-java
 
-这是一个基础项目，用来编写一些基础的 java 类库。
+被Java项目用来验证一些常用代码的最佳实践写法
 
 # Checkout
 
@@ -8,11 +8,13 @@
 
 # Run
 
+`mvn clean install exec:java`
 `mvn clean install exec:java -Dexec.args="hi 9999"`
 
 # Test
 
-[访问测试](http://localhost:9999/hi?github.com=http://github.com "access github.com")
+[默认(/hello)接口测试](http://localhost:8888/hello?github.com=http://github.com "access github.com")
+[自定义接口测试](http://localhost:9999/hi?github.com=http://github.com "access github.com")
 
 # TODO LIST
 

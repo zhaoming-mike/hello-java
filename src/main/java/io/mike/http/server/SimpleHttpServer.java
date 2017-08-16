@@ -1,9 +1,11 @@
-package io.mike.http;
+package io.mike.http.server;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
 
 import com.sun.net.httpserver.*;
+
+import io.mike.http.server.handler.HelloHttpHandler;
 
 public class SimpleHttpServer {
 

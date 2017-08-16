@@ -44,7 +44,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>io.mike.http.SimpleHttpServer</mainClass>
+					<mainClass>io.mike.http.server.SimpleHttpServer</mainClass>
 					<arguments>
 						<argument>hello</argument>
 						<argument>8888</argument>
