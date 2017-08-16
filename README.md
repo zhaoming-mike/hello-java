@@ -10,6 +10,7 @@
 
 1. `mvn clean install exec:java`
 1. `mvn clean install exec:java -Dexec.args="hi 9999"`
+1. `mvn clean install exec:java -DskipTests`
 
 # Test
 
