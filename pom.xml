@@ -6,6 +6,10 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<dependencies>
 
+
+
+
+
 		<!-- java sum rt start -->
 		<dependency>
 			<groupId>com.sun</groupId>
@@ -14,6 +18,11 @@
 			<type>pom</type>
 		</dependency>
 		<!-- java sum rt end -->
+
+
+
+
+
 
 		<!-- java microbenchmark dependency start -->
 		<dependency>
@@ -28,9 +37,60 @@
 		</dependency>
 		<!-- java microbenchmark dependency end -->
 
+
+
+
+
+
+		<!-- test dependency start -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+		<!-- test dependency end -->
+
+
+
+
+
+		<!-- log dependency start -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.21</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.1.6</version>
+		</dependency>
+		<!-- log dependency end -->
+
+
+
+
+
+		<!-- http dependency start -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.2</version>
+		</dependency>
+		<!-- http dependency end -->
+		
+		
+		
+		
+		
 	</dependencies>
 	<build>
 		<plugins>
+		
+		
+		
+		
+		
 			<!-- maven exec plugins start -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -52,6 +112,28 @@
 				</configuration>
 			</plugin>
 			<!-- maven exec plugins end -->
+
+
+
+
+
+			<!-- maven surefire plugins start -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.20</version>
+				<configuration>
+					<includes>
+						<include>*.java</include>
+					</includes>
+				</configuration>
+			</plugin>
+			<!-- maven surefire plugins end -->
+			
+			
+
+
+			
 		</plugins>
 	</build>
 </project>
