@@ -8,13 +8,13 @@
 
 # Run
 
-`mvn clean install exec:java`
-`mvn clean install exec:java -Dexec.args="hi 9999"`
+1. `mvn clean install exec:java`
+1. `mvn clean install exec:java -Dexec.args="hi 9999"`
 
 # Test
 
-[默认(/hello)接口测试](http://localhost:8888/hello?github.com=http://github.com "access github.com")
-[自定义接口测试](http://localhost:9999/hi?github.com=http://github.com "access github.com")
+1. [默认(/hello)接口测试](http://localhost:8888/hello?github.com=http://github.com "access github.com")
+1. [自定义接口测试](http://localhost:9999/hi?github.com=http://github.com "access github.com")
 
 # TODO LIST
 
