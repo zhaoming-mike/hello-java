@@ -1,7 +1,6 @@
 package io.mike.http.server;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
