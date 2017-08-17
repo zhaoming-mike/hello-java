@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import com.sun.net.httpserver.*;
 
 import io.mike.http.server.handler.HelloHttpHandler;
+import static io.mike.string.util.StringUtils.*;
 
 public class SimpleHttpServer {
 
@@ -30,23 +31,13 @@ public class SimpleHttpServer {
 			httpServer.createContext(path, new HelloHttpHandler());
 			httpServer.setExecutor(null);
 			httpServer.start();
-			printLines();
+			makeCharLine(100);
 			log.info("http server started on port:" + port);
 			log.info("http server path:" + path);
 			beforeShutdown();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-	
-	private static void printLines() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("\r\n");
-		sb.append("\r\n");
-		for (int i = 0; i < 100; i++) {
-			sb.append("=");
-		}
-		log.info(sb.toString());
 	}
 
 	private static void beforeShutdown() {

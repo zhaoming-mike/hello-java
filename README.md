@@ -1,6 +1,10 @@
 # hello-java
 
-被Java项目用来验证一些常用代码的最佳实践写法
+本Java项目用来验证一些常用代码的最佳实践写法
+
+1. http server
+1. http client
+1. IPv4 long2ip ip2long
 
 # Checkout
 

@@ -17,6 +17,7 @@ import com.sun.net.httpserver.HttpHandler;
  * @author zhaoming
  *
  */
+@SuppressWarnings("restriction")
 public class HelloHttpHandler implements HttpHandler {
 
 	@Override
