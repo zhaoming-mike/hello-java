@@ -2,6 +2,10 @@
 
 被Java项目用来验证一些常用代码的最佳实践写法
 
+1. http server
+2. http client
+3. IPv4 long2ip ip2long
+
 # Checkout
 
 `git clone https://github.com/zhaoming-mike/hello-java.git`
