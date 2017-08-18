@@ -12,6 +12,7 @@ import com.sun.net.httpserver.*;
 import io.mike.http.server.handler.HelloHttpHandler;
 import static io.mike.string.util.StringUtils.*;
 
+@SuppressWarnings("restriction")
 public class SimpleHttpServer {
 
 	private static final Logger log = LoggerFactory.getLogger(SimpleHttpServer.class);
