@@ -38,11 +38,18 @@
 		<!-- java microbenchmark dependency end -->
 
 
-<dependency>
-  <groupId>com.google.guava</groupId>
-  <artifactId>guava</artifactId>
-  <version>22.0</version>
-</dependency>
+
+
+
+        <!-- guava dependency start (21.0 up need jdk 8) -->
+		<dependency>
+		  <groupId>com.google.guava</groupId>
+		  <artifactId>guava</artifactId>
+		  <version>20.0</version>
+		</dependency>
+        <!-- guava dependency end -->
+
+
 
 
 
