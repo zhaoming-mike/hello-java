@@ -12,14 +12,14 @@ import static org.hamcrest.Matchers.is;
  */
 public class AbstractFactoryTest {
 
-    @Test
-    public void testHelloWorld() throws InstantiationException, IllegalAccessException {
-        SplitHelloWorldFactory splitHelloWorldFactory = AbstractFactory.select(AbstractFactory.Type.Java);
-        assertThat(splitHelloWorldFactory.createHelloWorldObject().object(), is("Java"));
-        assertThat(splitHelloWorldFactory.createHelloWorldInterjection().interjection(), is("Hello"));
-        splitHelloWorldFactory = AbstractFactory.select(AbstractFactory.Type.DesignPattern);
-        assertThat(splitHelloWorldFactory.createHelloWorldInterjection().interjection(), is("Hello"));
-        assertThat(splitHelloWorldFactory.createHelloWorldObject().object(), is("Abstract Factory"));
-    }
+	@Test
+	public void testHelloWorld() throws InstantiationException, IllegalAccessException {
+		SplitHelloWorldFactory splitHelloWorldFactory = AbstractFactory.select(AbstractFactory.Type.Java);
+		assertThat(splitHelloWorldFactory.createHelloWorldObject().object(), is("Java"));
+		assertThat(splitHelloWorldFactory.createHelloWorldInterjection().interjection(), is("Hello"));
+		splitHelloWorldFactory = AbstractFactory.select(AbstractFactory.Type.DesignPattern);
+		assertThat(splitHelloWorldFactory.createHelloWorldInterjection().interjection(), is("Hello"));
+		assertThat(splitHelloWorldFactory.createHelloWorldObject().object(), is("Abstract Factory"));
+	}
 
 }

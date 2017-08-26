@@ -8,7 +8,7 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.RemovalListener;
 import com.google.common.cache.RemovalNotification;
 
-import io.mike.cache.DataInfo;
+import io.mike.cache.guava.DataInfo;
 
 /**
  * @author zhaoming
