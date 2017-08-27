@@ -20,7 +20,6 @@ import helloworld.creational.abstract_factory.AbstractFactory;
 import helloworld.creational.abstract_factory.SplitHelloWorldFactory;
 import helloworld.creational.builder.HelloWorldBuilder;
 import helloworld.creational.prototype.HelloWorldPrototype;
-import helloworld.creational.singleton.HelloWorldSingleton;
 import helloworld.structural.adapter.HelloAdapterDesignPattern;
 import helloworld.structural.adapter.HelloWorldAdapter;
 import helloworld.structural.bridge.DesignPatternWorldImpl;
@@ -55,10 +54,6 @@ public class Main {
         System.out.println("4. Prototype: ");
         HelloWorld prototypeHelloWorld = HelloWorldPrototype.PROTOTYPE.clone();
         System.out.println(prototypeHelloWorld.helloWorld());
-
-        System.out.println("5. Singleton: ");
-        HelloWorld singletonHelloWorld = HelloWorldSingleton.instance();
-        System.out.println(singletonHelloWorld.helloWorld());
 
         System.out.println("====================================");
         System.out.println("We are structural patterns!");
