@@ -24,6 +24,7 @@
 # TODO LIST
 - [x] 内嵌 Http 服务(embed http server/client)
 - [x] 微基准测试 Demo (microbenchmark demo)
+- [x] 设计模式 Gof
 - [ ] JSON 编解码处理框架
 - [ ] **日期**字符串处理
 - [x] 好用的**排序算法**框架
