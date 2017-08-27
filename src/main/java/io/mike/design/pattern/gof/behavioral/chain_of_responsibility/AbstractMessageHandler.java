@@ -1,5 +1,7 @@
 package io.mike.design.pattern.gof.behavioral.chain_of_responsibility;
 
+import io.mike.design.pattern.gof.Message;
+
 public abstract class AbstractMessageHandler implements Message {
 
 	private AbstractMessageHandler next;

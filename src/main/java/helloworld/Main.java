@@ -19,7 +19,6 @@ import helloworld.behavioral.visitor.HelloWorldCharacterVisitor;
 import helloworld.creational.abstract_factory.AbstractFactory;
 import helloworld.creational.abstract_factory.SplitHelloWorldFactory;
 import helloworld.creational.builder.HelloWorldBuilder;
-import helloworld.creational.factory_method.FactoryMethodHelloWorldFactory;
 import helloworld.creational.prototype.HelloWorldPrototype;
 import helloworld.creational.singleton.HelloWorldSingleton;
 import helloworld.structural.adapter.HelloAdapterDesignPattern;
@@ -53,16 +52,6 @@ public class Main {
                 .interjection("Hello")
                 .object("Builder").getHelloWorld();
         System.out.println(builderHelloWorld.helloWorld());
-
-        System.out.println("3. Factory Method: ");
-        /**
-         * Difference between "abstract factory" and "factory method" is the abstracting point:
-         *  1. Abstracting point of abstract factory is factory.
-         *  2. Abstracting point of factory method is generated object.
-         */
-        FactoryMethodHelloWorldFactory factoryMethodHelloWorldFactory = new FactoryMethodHelloWorldFactory();
-        HelloWorld factoryMethodHelloWorld = factoryMethodHelloWorldFactory.createHelloWorld();
-        System.out.println(factoryMethodHelloWorld.helloWorld());
 
         System.out.println("4. Prototype: ");
         HelloWorld prototypeHelloWorld = HelloWorldPrototype.PROTOTYPE.clone();
