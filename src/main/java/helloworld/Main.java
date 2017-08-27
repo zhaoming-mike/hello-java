@@ -29,7 +29,6 @@ import helloworld.structural.composite.CompositeHelloWorld;
 import helloworld.structural.decorator.HelloWorldDecorator;
 import helloworld.structural.facade.HelloWorldFacade;
 import helloworld.structural.flyweight.HelloWorldFlyWeightFactory;
-import helloworld.structural.proxy.HelloWorldProxy;
 
 /**
  * @author yihua.huang@dianping.com
@@ -87,10 +86,6 @@ public class Main {
         System.out.println("11. Flyweight: ");
         HelloWorld flyWeightHelloWorld = HelloWorldFlyWeightFactory.instance().createHelloWorld("Hello Flyweight!");
         System.out.println(flyWeightHelloWorld.helloWorld());
-
-        System.out.println("12. Proxy: ");
-        HelloWorld proxyHelloWorld = new HelloWorldProxy(new HelloWorldProxy.DefaultHelloWorld());
-        System.out.println(proxyHelloWorld.helloWorld());
 
         System.out.println("====================================");
         System.out.println("We are behavioral patterns!");
