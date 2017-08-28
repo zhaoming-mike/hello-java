@@ -13,7 +13,6 @@ import helloworld.behavioral.strategy.HelloWorldStrategyContext;
 import helloworld.behavioral.template_method.TemplateMethodHelloWorld;
 import helloworld.behavioral.visitor.HelloWorldCharacterElements;
 import helloworld.behavioral.visitor.HelloWorldCharacterVisitor;
-import helloworld.creational.builder.HelloWorldBuilder;
 import helloworld.structural.adapter.HelloAdapterDesignPattern;
 import helloworld.structural.adapter.HelloWorldAdapter;
 import helloworld.structural.bridge.DesignPatternWorldImpl;
@@ -31,12 +30,6 @@ public class Main {
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
 
         System.out.println("We are creational patterns!");
-
-        System.out.println("2. Builder: ");
-        HelloWorld builderHelloWorld = HelloWorldBuilder.builder()
-                .interjection("Hello")
-                .object("Builder").getHelloWorld();
-        System.out.println(builderHelloWorld.helloWorld());
 
         System.out.println("====================================");
         System.out.println("We are structural patterns!");
