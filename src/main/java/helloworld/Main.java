@@ -3,7 +3,6 @@ package helloworld;
 import helloworld.behavioral.mediator.HelloWorldInterjection;
 import helloworld.behavioral.mediator.HelloWorldMediator;
 import helloworld.behavioral.mediator.HelloWorldObject;
-import helloworld.behavioral.memento.HelloWorldMementoOriginator;
 import helloworld.behavioral.observer.HelloWorldObserver;
 import helloworld.behavioral.observer.Subject;
 import helloworld.behavioral.state.HelloWorldStateContext;
@@ -62,13 +61,6 @@ public class Main {
         helloWorldInterjection.setHelloWorldMediator(helloWorldMediator);
         helloWorldObject.setHelloWorldMediator(helloWorldMediator);
         System.out.println(helloWorldObject.helloWorld());
-
-        System.out.println("18. Memento: ");
-        HelloWorldMementoOriginator helloWorldMementoOriginator = new HelloWorldMementoOriginator();
-        HelloWorldMementoOriginator.Memento memento = helloWorldMementoOriginator.set("Hello Memento!").saveToMemento();
-        helloWorldMementoOriginator.set("Hello Whatever!");
-        helloWorldMementoOriginator.restoreFromMemento(memento);
-        System.out.println(helloWorldMementoOriginator.helloWorld());
 
         System.out.println("19. Observer: ");
         Subject subject = new Subject().attach(new HelloWorldObserver());
