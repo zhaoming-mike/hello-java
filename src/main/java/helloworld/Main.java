@@ -14,7 +14,6 @@ import helloworld.behavioral.template_method.TemplateMethodHelloWorld;
 import helloworld.behavioral.visitor.HelloWorldCharacterElements;
 import helloworld.behavioral.visitor.HelloWorldCharacterVisitor;
 import helloworld.creational.builder.HelloWorldBuilder;
-import helloworld.creational.prototype.HelloWorldPrototype;
 import helloworld.structural.adapter.HelloAdapterDesignPattern;
 import helloworld.structural.adapter.HelloWorldAdapter;
 import helloworld.structural.bridge.DesignPatternWorldImpl;
@@ -38,10 +37,6 @@ public class Main {
                 .interjection("Hello")
                 .object("Builder").getHelloWorld();
         System.out.println(builderHelloWorld.helloWorld());
-
-        System.out.println("4. Prototype: ");
-        HelloWorld prototypeHelloWorld = HelloWorldPrototype.PROTOTYPE.clone();
-        System.out.println(prototypeHelloWorld.helloWorld());
 
         System.out.println("====================================");
         System.out.println("We are structural patterns!");
