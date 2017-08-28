@@ -1,7 +1,7 @@
 package helloworld.structural.facade;
 
 import helloworld.HelloWorld;
-import helloworld.creational.builder.HelloWorldBuilder;
+//import helloworld.creational.builder.HelloWorldBuilder;
 
 /**
  * @author yihua.huang@dianping.com
@@ -23,9 +23,10 @@ public class HelloWorldFacade {
     }
 
     public HelloWorld facadeHelloWorld(){
-        return HelloWorldBuilder.builder()
+        /*return HelloWorldBuilder.builder()
                 .interjection("Hello")
-                .object("Facade").getHelloWorld();
+                .object("Facade").getHelloWorld();*/
+        return null;
     }
 
 }

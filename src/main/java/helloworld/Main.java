@@ -1,9 +1,5 @@
 package helloworld;
 
-import helloworld.behavioral.command.Command;
-import helloworld.behavioral.command.HelloWorldPrintCommand;
-import helloworld.behavioral.interpreter.HelloWorldInterpreter;
-import helloworld.behavioral.iterator.HelloWorldCharacterIterator;
 import helloworld.behavioral.mediator.HelloWorldInterjection;
 import helloworld.behavioral.mediator.HelloWorldMediator;
 import helloworld.behavioral.mediator.HelloWorldObject;
@@ -16,15 +12,10 @@ import helloworld.behavioral.strategy.HelloWorldStrategyContext;
 import helloworld.behavioral.template_method.TemplateMethodHelloWorld;
 import helloworld.behavioral.visitor.HelloWorldCharacterElements;
 import helloworld.behavioral.visitor.HelloWorldCharacterVisitor;
-import helloworld.creational.abstract_factory.AbstractFactory;
-import helloworld.creational.abstract_factory.SplitHelloWorldFactory;
-import helloworld.creational.builder.HelloWorldBuilder;
-import helloworld.creational.prototype.HelloWorldPrototype;
 import helloworld.structural.adapter.HelloAdapterDesignPattern;
 import helloworld.structural.adapter.HelloWorldAdapter;
 import helloworld.structural.bridge.DesignPatternWorldImpl;
 import helloworld.structural.bridge.HelloWorldBridge;
-import helloworld.structural.composite.CompositeHelloWorld;
 import helloworld.structural.decorator.HelloWorldDecorator;
 import helloworld.structural.facade.HelloWorldFacade;
 import helloworld.structural.flyweight.HelloWorldFlyWeightFactory;
@@ -38,23 +29,6 @@ public class Main {
 
         System.out.println("We are creational patterns!");
 
-        System.out.println("1. Abstract Factory: ");
-
-        SplitHelloWorldFactory abstractFactory = AbstractFactory.select(AbstractFactory.Type.DesignPattern);
-        HelloWorld abstractFactoryHelloWorld = new SplitHelloWorld(abstractFactory.createHelloWorldInterjection(),
-                abstractFactory.createHelloWorldObject());
-        System.out.println(abstractFactoryHelloWorld.helloWorld());
-
-        System.out.println("2. Builder: ");
-        HelloWorld builderHelloWorld = HelloWorldBuilder.builder()
-                .interjection("Hello")
-                .object("Builder").getHelloWorld();
-        System.out.println(builderHelloWorld.helloWorld());
-
-        System.out.println("4. Prototype: ");
-        HelloWorld prototypeHelloWorld = HelloWorldPrototype.PROTOTYPE.clone();
-        System.out.println(prototypeHelloWorld.helloWorld());
-
         System.out.println("====================================");
         System.out.println("We are structural patterns!");
 
@@ -65,10 +39,6 @@ public class Main {
         System.out.println("7. Bridge: ");
         HelloWorld bridgeHelloWorld = new HelloWorldBridge(new DesignPatternWorldImpl());
         //leave bridgeHelloWorld' output to compositeHelloWorld
-
-        System.out.println("8. Composite: ");
-        HelloWorld compositeHelloWorld = new CompositeHelloWorld(bridgeHelloWorld, new CompositeHelloWorld.DefaultHelloWorld());
-        System.out.println(compositeHelloWorld.helloWorld());
 
         System.out.println("9. Decorator: ");
         HelloWorldDecorator decoratorHelloWorld = new HelloWorldDecorator(new HelloWorldDecorator.DefaultHelloWorld());
@@ -84,21 +54,6 @@ public class Main {
 
         System.out.println("====================================");
         System.out.println("We are behavioral patterns!");
-
-        System.out.println("14. Command: ");
-        Command helloWorldCommand = new HelloWorldPrintCommand();
-        helloWorldCommand.execute();
-
-        System.out.println("15. Interpreter: ");
-        HelloWorldInterpreter helloWorldInterpreter = new HelloWorldInterpreter();
-        helloWorldInterpreter.interpret("println('Hello Interpreter!')");
-
-        System.out.println("16. Iterator: ");
-        HelloWorldCharacterIterator helloWorldCharacterIterator = new HelloWorldCharacterIterator("Hello Iterator!".toCharArray());
-        while (helloWorldCharacterIterator.hasNext()) {
-            System.out.print(helloWorldCharacterIterator.next());
-        }
-        System.out.println();
 
         System.out.println("17. Mediator: ");
         HelloWorldInterjection helloWorldInterjection = new HelloWorldInterjection();
