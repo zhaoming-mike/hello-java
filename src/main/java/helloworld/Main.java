@@ -13,8 +13,6 @@ import helloworld.behavioral.strategy.HelloWorldStrategyContext;
 import helloworld.behavioral.template_method.TemplateMethodHelloWorld;
 import helloworld.behavioral.visitor.HelloWorldCharacterElements;
 import helloworld.behavioral.visitor.HelloWorldCharacterVisitor;
-import helloworld.creational.abstract_factory.AbstractFactory;
-import helloworld.creational.abstract_factory.SplitHelloWorldFactory;
 import helloworld.creational.builder.HelloWorldBuilder;
 import helloworld.creational.prototype.HelloWorldPrototype;
 import helloworld.structural.adapter.HelloAdapterDesignPattern;
@@ -34,13 +32,6 @@ public class Main {
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
 
         System.out.println("We are creational patterns!");
-
-        System.out.println("1. Abstract Factory: ");
-
-        SplitHelloWorldFactory abstractFactory = AbstractFactory.select(AbstractFactory.Type.DesignPattern);
-        HelloWorld abstractFactoryHelloWorld = new SplitHelloWorld(abstractFactory.createHelloWorldInterjection(),
-                abstractFactory.createHelloWorldObject());
-        System.out.println(abstractFactoryHelloWorld.helloWorld());
 
         System.out.println("2. Builder: ");
         HelloWorld builderHelloWorld = HelloWorldBuilder.builder()
