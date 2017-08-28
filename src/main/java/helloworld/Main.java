@@ -1,7 +1,5 @@
 package helloworld;
 
-import helloworld.behavioral.command.Command;
-import helloworld.behavioral.command.HelloWorldPrintCommand;
 import helloworld.behavioral.interpreter.HelloWorldInterpreter;
 import helloworld.behavioral.iterator.HelloWorldCharacterIterator;
 import helloworld.behavioral.mediator.HelloWorldInterjection;
@@ -84,10 +82,6 @@ public class Main {
 
         System.out.println("====================================");
         System.out.println("We are behavioral patterns!");
-
-        System.out.println("14. Command: ");
-        Command helloWorldCommand = new HelloWorldPrintCommand();
-        helloWorldCommand.execute();
 
         System.out.println("15. Interpreter: ");
         HelloWorldInterpreter helloWorldInterpreter = new HelloWorldInterpreter();
