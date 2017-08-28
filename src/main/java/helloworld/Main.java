@@ -1,6 +1,5 @@
 package helloworld;
 
-import helloworld.behavioral.interpreter.HelloWorldInterpreter;
 import helloworld.behavioral.iterator.HelloWorldCharacterIterator;
 import helloworld.behavioral.mediator.HelloWorldInterjection;
 import helloworld.behavioral.mediator.HelloWorldMediator;
@@ -82,10 +81,6 @@ public class Main {
 
         System.out.println("====================================");
         System.out.println("We are behavioral patterns!");
-
-        System.out.println("15. Interpreter: ");
-        HelloWorldInterpreter helloWorldInterpreter = new HelloWorldInterpreter();
-        helloWorldInterpreter.interpret("println('Hello Interpreter!')");
 
         System.out.println("16. Iterator: ");
         HelloWorldCharacterIterator helloWorldCharacterIterator = new HelloWorldCharacterIterator("Hello Iterator!".toCharArray());
