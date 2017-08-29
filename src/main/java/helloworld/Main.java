@@ -12,8 +12,6 @@ import helloworld.structural.adapter.HelloAdapterDesignPattern;
 import helloworld.structural.adapter.HelloWorldAdapter;
 import helloworld.structural.bridge.DesignPatternWorldImpl;
 import helloworld.structural.bridge.HelloWorldBridge;
-import helloworld.structural.decorator.HelloWorldDecorator;
-import helloworld.structural.facade.HelloWorldFacade;
 import helloworld.structural.flyweight.HelloWorldFlyWeightFactory;
 
 /**
@@ -35,14 +33,6 @@ public class Main {
         System.out.println("7. Bridge: ");
         HelloWorld bridgeHelloWorld = new HelloWorldBridge(new DesignPatternWorldImpl());
         //leave bridgeHelloWorld' output to compositeHelloWorld
-
-        System.out.println("9. Decorator: ");
-        HelloWorldDecorator decoratorHelloWorld = new HelloWorldDecorator(new HelloWorldDecorator.DefaultHelloWorld());
-        System.out.println(decoratorHelloWorld.helloDecorator());
-
-        System.out.println("10. Facade: ");
-        HelloWorld facadeHelloWorld = HelloWorldFacade.instance().facadeHelloWorld();
-        System.out.println(facadeHelloWorld.helloWorld());
 
         System.out.println("11. Flyweight: ");
         HelloWorld flyWeightHelloWorld = HelloWorldFlyWeightFactory.instance().createHelloWorld("Hello Flyweight!");
