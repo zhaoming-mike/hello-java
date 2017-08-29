@@ -1,10 +1,10 @@
 package helloworld;
 
+import javax.security.auth.Subject;
+
 import helloworld.behavioral.mediator.HelloWorldInterjection;
 import helloworld.behavioral.mediator.HelloWorldMediator;
 import helloworld.behavioral.mediator.HelloWorldObject;
-import helloworld.behavioral.observer.HelloWorldObserver;
-import helloworld.behavioral.observer.Subject;
 import helloworld.behavioral.state.HelloWorldStateContext;
 import helloworld.behavioral.strategy.DesignPatternHelloWorldStrategy;
 import helloworld.behavioral.strategy.HelloWorldStrategyContext;
@@ -61,10 +61,6 @@ public class Main {
         helloWorldInterjection.setHelloWorldMediator(helloWorldMediator);
         helloWorldObject.setHelloWorldMediator(helloWorldMediator);
         System.out.println(helloWorldObject.helloWorld());
-
-        System.out.println("19. Observer: ");
-        Subject subject = new Subject().attach(new HelloWorldObserver());
-        subject.notifyObservers();
 
         System.out.println("20. State: ");
         HelloWorldStateContext helloWorldStateContext = new HelloWorldStateContext();
