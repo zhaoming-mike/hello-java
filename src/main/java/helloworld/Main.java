@@ -1,14 +1,11 @@
 package helloworld;
 
-import javax.security.auth.Subject;
-
 import helloworld.behavioral.mediator.HelloWorldInterjection;
 import helloworld.behavioral.mediator.HelloWorldMediator;
 import helloworld.behavioral.mediator.HelloWorldObject;
 import helloworld.behavioral.state.HelloWorldStateContext;
 import helloworld.behavioral.strategy.DesignPatternHelloWorldStrategy;
 import helloworld.behavioral.strategy.HelloWorldStrategyContext;
-import helloworld.behavioral.template_method.TemplateMethodHelloWorld;
 import helloworld.behavioral.visitor.HelloWorldCharacterElements;
 import helloworld.behavioral.visitor.HelloWorldCharacterVisitor;
 import helloworld.structural.adapter.HelloAdapterDesignPattern;
@@ -70,10 +67,6 @@ public class Main {
         System.out.println("21. Strategy: ");
         HelloWorldStrategyContext helloWorldStrategyContext = new HelloWorldStrategyContext(new DesignPatternHelloWorldStrategy());
         System.out.println(helloWorldStrategyContext.helloWorld());
-
-        System.out.println("22. Template Method: ");
-        HelloWorld templateMethodHelloWorld = new TemplateMethodHelloWorld();
-        System.out.println(templateMethodHelloWorld.helloWorld());
 
         System.out.println("23. Visitor: ");
         HelloWorldCharacterElements helloWorldCharacterElements = new HelloWorldCharacterElements("Hello Visitor!".toCharArray());
