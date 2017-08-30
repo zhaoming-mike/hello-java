@@ -1,8 +1,5 @@
 package helloworld;
 
-import helloworld.behavioral.mediator.HelloWorldInterjection;
-import helloworld.behavioral.mediator.HelloWorldMediator;
-import helloworld.behavioral.mediator.HelloWorldObject;
 import helloworld.behavioral.state.HelloWorldStateContext;
 import helloworld.behavioral.strategy.DesignPatternHelloWorldStrategy;
 import helloworld.behavioral.strategy.HelloWorldStrategyContext;
@@ -34,14 +31,6 @@ public class Main {
 
         System.out.println("====================================");
         System.out.println("We are behavioral patterns!");
-
-        System.out.println("17. Mediator: ");
-        HelloWorldInterjection helloWorldInterjection = new HelloWorldInterjection();
-        HelloWorldObject helloWorldObject = new HelloWorldObject();
-        HelloWorldMediator helloWorldMediator = new HelloWorldMediator(helloWorldInterjection, helloWorldObject);
-        helloWorldInterjection.setHelloWorldMediator(helloWorldMediator);
-        helloWorldObject.setHelloWorldMediator(helloWorldMediator);
-        System.out.println(helloWorldObject.helloWorld());
 
         System.out.println("20. State: ");
         HelloWorldStateContext helloWorldStateContext = new HelloWorldStateContext();
