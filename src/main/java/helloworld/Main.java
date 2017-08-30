@@ -8,8 +8,6 @@ import helloworld.behavioral.strategy.DesignPatternHelloWorldStrategy;
 import helloworld.behavioral.strategy.HelloWorldStrategyContext;
 import helloworld.behavioral.visitor.HelloWorldCharacterElements;
 import helloworld.behavioral.visitor.HelloWorldCharacterVisitor;
-import helloworld.structural.adapter.HelloAdapterDesignPattern;
-import helloworld.structural.adapter.HelloWorldAdapter;
 import helloworld.structural.bridge.DesignPatternWorldImpl;
 import helloworld.structural.bridge.HelloWorldBridge;
 import helloworld.structural.flyweight.HelloWorldFlyWeightFactory;
@@ -25,10 +23,6 @@ public class Main {
 
         System.out.println("====================================");
         System.out.println("We are structural patterns!");
-
-        System.out.println("6. Adapter: ");
-        HelloWorld adapterHelloWorld = new HelloWorldAdapter(new HelloAdapterDesignPattern());
-        System.out.println(adapterHelloWorld.helloWorld());
 
         System.out.println("7. Bridge: ");
         HelloWorld bridgeHelloWorld = new HelloWorldBridge(new DesignPatternWorldImpl());

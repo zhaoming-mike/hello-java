@@ -1,11 +1,11 @@
 package helloworld.structural.bridge;
 
-import helloworld.HelloWorld;
-import helloworld.structural.adapter.HelloAdapterDesignPattern;
-import org.junit.Test;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+
+import org.junit.Test;
+
+import helloworld.HelloWorld;
 
 /**
  * @author yihua.huang@dianping.com
