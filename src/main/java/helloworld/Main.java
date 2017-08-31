@@ -1,6 +1,5 @@
 package helloworld;
 
-import helloworld.behavioral.state.HelloWorldStateContext;
 import helloworld.behavioral.strategy.DesignPatternHelloWorldStrategy;
 import helloworld.behavioral.strategy.HelloWorldStrategyContext;
 import helloworld.behavioral.visitor.HelloWorldCharacterElements;
@@ -31,11 +30,6 @@ public class Main {
 
         System.out.println("====================================");
         System.out.println("We are behavioral patterns!");
-
-        System.out.println("20. State: ");
-        HelloWorldStateContext helloWorldStateContext = new HelloWorldStateContext();
-        HelloWorld stateHelloWorld = helloWorldStateContext.appendWord("Hello").appendWord("State");
-        System.out.println(stateHelloWorld.helloWorld());
 
         System.out.println("21. Strategy: ");
         HelloWorldStrategyContext helloWorldStrategyContext = new HelloWorldStrategyContext(new DesignPatternHelloWorldStrategy());
