@@ -6,7 +6,6 @@ import helloworld.behavioral.visitor.HelloWorldCharacterElements;
 import helloworld.behavioral.visitor.HelloWorldCharacterVisitor;
 import helloworld.structural.bridge.DesignPatternWorldImpl;
 import helloworld.structural.bridge.HelloWorldBridge;
-import helloworld.structural.flyweight.HelloWorldFlyWeightFactory;
 
 /**
  * @author yihua.huang@dianping.com
@@ -23,10 +22,6 @@ public class Main {
         System.out.println("7. Bridge: ");
         HelloWorld bridgeHelloWorld = new HelloWorldBridge(new DesignPatternWorldImpl());
         //leave bridgeHelloWorld' output to compositeHelloWorld
-
-        System.out.println("11. Flyweight: ");
-        HelloWorld flyWeightHelloWorld = HelloWorldFlyWeightFactory.instance().createHelloWorld("Hello Flyweight!");
-        System.out.println(flyWeightHelloWorld.helloWorld());
 
         System.out.println("====================================");
         System.out.println("We are behavioral patterns!");
