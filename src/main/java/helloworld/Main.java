@@ -1,13 +1,11 @@
 package helloworld;
 
-import helloworld.behavioral.state.HelloWorldStateContext;
 import helloworld.behavioral.strategy.DesignPatternHelloWorldStrategy;
 import helloworld.behavioral.strategy.HelloWorldStrategyContext;
 import helloworld.behavioral.visitor.HelloWorldCharacterElements;
 import helloworld.behavioral.visitor.HelloWorldCharacterVisitor;
 import helloworld.structural.bridge.DesignPatternWorldImpl;
 import helloworld.structural.bridge.HelloWorldBridge;
-import helloworld.structural.flyweight.HelloWorldFlyWeightFactory;
 
 /**
  * @author yihua.huang@dianping.com
@@ -25,17 +23,8 @@ public class Main {
         HelloWorld bridgeHelloWorld = new HelloWorldBridge(new DesignPatternWorldImpl());
         //leave bridgeHelloWorld' output to compositeHelloWorld
 
-        System.out.println("11. Flyweight: ");
-        HelloWorld flyWeightHelloWorld = HelloWorldFlyWeightFactory.instance().createHelloWorld("Hello Flyweight!");
-        System.out.println(flyWeightHelloWorld.helloWorld());
-
         System.out.println("====================================");
         System.out.println("We are behavioral patterns!");
-
-        System.out.println("20. State: ");
-        HelloWorldStateContext helloWorldStateContext = new HelloWorldStateContext();
-        HelloWorld stateHelloWorld = helloWorldStateContext.appendWord("Hello").appendWord("State");
-        System.out.println(stateHelloWorld.helloWorld());
 
         System.out.println("21. Strategy: ");
         HelloWorldStrategyContext helloWorldStrategyContext = new HelloWorldStrategyContext(new DesignPatternHelloWorldStrategy());
