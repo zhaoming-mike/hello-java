@@ -1,4 +1,4 @@
-package io.mike.design.pattern.gof.mediator;
+package io.mike.design.pattern.gof.behavioral.mediator;
 
 import org.junit.Test;
 

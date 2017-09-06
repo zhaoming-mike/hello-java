@@ -4,8 +4,6 @@ import helloworld.behavioral.strategy.DesignPatternHelloWorldStrategy;
 import helloworld.behavioral.strategy.HelloWorldStrategyContext;
 import helloworld.behavioral.visitor.HelloWorldCharacterElements;
 import helloworld.behavioral.visitor.HelloWorldCharacterVisitor;
-import helloworld.structural.bridge.DesignPatternWorldImpl;
-import helloworld.structural.bridge.HelloWorldBridge;
 
 /**
  * @author yihua.huang@dianping.com
@@ -18,10 +16,6 @@ public class Main {
 
         System.out.println("====================================");
         System.out.println("We are structural patterns!");
-
-        System.out.println("7. Bridge: ");
-        HelloWorld bridgeHelloWorld = new HelloWorldBridge(new DesignPatternWorldImpl());
-        //leave bridgeHelloWorld' output to compositeHelloWorld
 
         System.out.println("====================================");
         System.out.println("We are behavioral patterns!");
