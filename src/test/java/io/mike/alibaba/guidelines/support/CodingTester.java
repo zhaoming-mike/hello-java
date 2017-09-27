@@ -152,6 +152,33 @@ public class CodingTester {
 	}
 	
 	@Test
+	@Level(LevelType.enforce)
+	public void test_name_multiple() throws Exception {
+		//9、【强制】包名统一使用小写，点分隔符之间有且仅有一个自然语义的英语单词。包名统一使用单数形式，但是类名如果有复数含义，类名可以使用复数形式。
+		//package io.mike.alibaba.DateUtils
+		//package io.mike.userinfo.DateUtils		//两个自然语义 user vs info
+		//package io.mike.girls.Infos				//包名英语单词用不建议用复数形式
+	}
+	
+	@Test
+	@Level(LevelType.enforce)
+	public void test_name_name_can_see() throws Exception {
+		String condition = "能望文生义的好变量名";
+		String aa = "鬼都不知道是啥的变量名";
+		assertThat(condition, is("能望文生义的好变量名"));
+		assertThat(aa, is("鬼都不知道是啥的变量名"));
+		
+		//【推荐】为了达到代码自解释的目标，任何定义编程元素在命名时使用尽量完整单词 组合来表达其意。
+		PullSourceCodeFromGitResposity resposity = new PullSourceCodeFromGitResposity("完整单词组合的类名");
+		assertThat(resposity.desc, is("完整单词组合的类名"));
+	}
+	
+	public static class PullSourceCodeFromGitResposity { 
+		private String desc; 
+		public PullSourceCodeFromGitResposity(String desc) { this.desc = desc; } 
+	}
+	
+	@Test
 	public void test() throws Exception {
 		Assert.assertEquals(1, 1);
 	}
