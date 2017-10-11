@@ -22,11 +22,11 @@ import io.mike.alibaba.guidelines.support.UnitTester;
  * 
  * 手册划分
  * 	1、编程规范			{@link CodingTester}
- * 	2、异常日志 		{@link ExceptionTester} 
+ * 	2、异常日志 			{@link ExceptionTester} 
  * 	3、单元测试			{@link UnitTester}
  * 	4、安全规约			{@link SecurityTester}
  * 	5、工程结构			{@link ProjectTester}
- * 	6、数据库(mysql)	{@link MysqlTester}
+ * 	6、数据库(mysql)		{@link MysqlTester}
  * 
  * 约束力强弱以及故障敏感性
  * 	强制{@link LevelType#enforce} > 推荐{@link LevelType#recommend} > 参考{@link LevelType#reference}
