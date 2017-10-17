@@ -33,5 +33,6 @@
 - [ ] 不重启进程，**自刷新**配置方案
 - [ ] 数据库**连接池**管理
 - [x] 阿里巴巴编程规范 v1.3.0 2017-09-25 [英文版](https://alibaba.github.io/Alibaba-Java-Coding-Guidelines "goto")
+- [x] 添加 aop 的 demo
 - [ ] _待完善
 
