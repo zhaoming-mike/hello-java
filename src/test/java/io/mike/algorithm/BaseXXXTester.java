@@ -3,12 +3,54 @@ package io.mike.algorithm;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
+import java.security.MessageDigest;
+
+import org.apache.commons.codec.binary.Base64;
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.google.common.io.BaseEncoding;
 
 public class BaseXXXTester {
 
+	/**
+	  * 客户端请求
+	  *		GET / HTTP/1.1
+	  *		Upgrade: websocket
+	  *		Connection: Upgrade
+	  *		Host: example.com
+	  *		Origin: http://example.com
+	  *		Sec-WebSocket-Key: sN9cRrP/n9NdMgdcy2VJFQ==
+	  *		Sec-WebSocket-Version: 13
+	  *		
+	  *	服务器响应
+	  *		HTTP/1.1 101 Switching Protocols
+	  *		Upgrade: websocket
+	  *		Connection: Upgrade
+	  *		Sec-WebSocket-Accept: fFBooB7FAkLlXgRSz0BT3v4hq5s=
+	  *		Sec-WebSocket-Location: ws://example.com/
+	  */
+	@Test
+	public void test_websocket_handshake() {
+		/** 特殊字符串 */
+		String specialStr = "258EAFA5-E914-47DA-95CA-C5AB0DC85B11";
+		/** 随机字符串 */
+		String secWebSocketKey = "sN9cRrP/n9NdMgdcy2VJFQ==";
+		/** 服务器计算：Base64(SHA-1(secWebSocketKey + specialString)) */
+		String secWebSocketAccept = "fFBooB7FAkLlXgRSz0BT3v4hq5s=";
+		try {
+			String msg = secWebSocketKey + specialStr;
+			byte[] msgBytes = msg.getBytes("UTF-8");
+			byte[] msgBytesSHA1 = MessageDigest.getInstance("SHA-1").digest(msgBytes);
+			byte[] msgBytesSHA1Base64 = Base64.encodeBase64(msgBytesSHA1);
+			String actual = new String(msgBytesSHA1Base64);
+			System.out.println("actual:" + actual);
+			Assert.assertEquals(secWebSocketAccept, actual);
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+	}
+	
 	/** 
 	 * http://www.thefullwiki.org/Base-16
 	 * hexadecimal (base 16 or hex) is a positional numeral system with a radix
