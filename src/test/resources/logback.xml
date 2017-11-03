@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false" scan="true" scanPeriod="60 seconds">
+    
+    <!-- 日志的所在目录 -->
+    <property name="logs.dir" value="." />
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+		      <!-- 这里pattern有一个特殊用法，利用eclipse的按住ctrl单击跳转到行的formatter功能，可以快速定位日志的代码位置 -->
+			<pattern>%date [%thread] \(%file:%line\) [%level %logger{5}] - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logs.dir}/file.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logs.dir}/rotated/file.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>512MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>%date [%thread] \(%file:%line\) [%level %logger{5}] - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger level="NONE" name="org.springframework.test"/>
+	
+    <!-- additivity = false 不会传递给root 常用于单独记录日志时候使用 -->
+	<logger level="ERROR" name="a.a" additivity="false">
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

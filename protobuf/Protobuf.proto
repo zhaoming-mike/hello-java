@@ -1,0 +1,37 @@
+package io.mike.protobuf.msg;
+
+option optimize_for = SPEED;
+
+/**
+ *
+ * PB 有三种字段规则
+ * required 必选字段
+ *                  1、如果没有初始化，客户端会抛出  com.google.protobuf.UninitializedMessageException
+ *                  2、网络上篡改了bytes会导致       com.google.protobuf.InvalidProtocolBufferException
+ * optional 可选字段
+ * repeated 可重复字段
+ *                  1、历史原因对可重复的标量数值类型编码效率不高，可以通过[packed=true]提高编码效率
+ *                  2、e.g. "repeated int32 samples = 4 [packed=true];"
+ */
+
+message MultipleMessage {
+    repeated string msg = 1;
+}
+
+message TextConfig {
+    required string requiredStr = 2;
+    optional int32 id = 1;
+}
+
+message ResultExtend {
+    // 3.0 PB 才支持 map
+    //required map<string, string> extendMap = 1;
+    required string extendStr = 1;
+}
+
+message Result {
+    required int32 code = 1;
+    required string message = 2;
+    required ResultExtend extend = 3;
+    
+}
