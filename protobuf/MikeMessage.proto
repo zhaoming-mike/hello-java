@@ -1,0 +1,8 @@
+package io.mike.protobuf.msg;
+
+option optimize_for = SPEED;
+
+message HelloWorld {
+    required uint32 id = 1;
+    required string message = 2;
+}
